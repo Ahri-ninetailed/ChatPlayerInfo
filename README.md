@@ -41,6 +41,8 @@ Game version: **WoW Forever**.
 
 Source code and bug reports: [GitHub](https://github.com/Ahri-ninetailed/ChatPlayerInfo)
 
+License: **All Rights Reserved**. The source code is open to read, but copying, changing or republishing it requires the author's permission ([LICENSE](https://github.com/Ahri-ninetailed/ChatPlayerInfo/blob/main/LICENSE)).
+
 ---
 
 # ChatPlayerInfo (Русский)
@@ -83,3 +85,5 @@ Source code and bug reports: [GitHub](https://github.com/Ahri-ninetailed/ChatPla
 Версия игры: **WoW Forever**.
 
 Исходный код и сообщения об ошибках: [GitHub](https://github.com/Ahri-ninetailed/ChatPlayerInfo)
+
+Лицензия: **все права защищены** (All Rights Reserved). Исходный код открыт для чтения, но копировать, изменять или выкладывать его можно только с разрешения автора ([LICENSE](https://github.com/Ahri-ninetailed/ChatPlayerInfo/blob/main/LICENSE)).

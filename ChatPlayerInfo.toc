@@ -6,7 +6,7 @@
 ## Category: Chat
 ## Author: Ahri-ninetailed
 ## Version: @project-version@
-## X-License: MIT
+## X-License: All Rights Reserved
 ## SavedVariables: ChatPlayerInfoDB
 
 Core.lua
