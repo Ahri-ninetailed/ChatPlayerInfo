@@ -18,14 +18,14 @@
 - **Works in all player chats.** Say, Yell, numbered channels (General, Trade, LFG and custom channels), Guild, Officer, Party, Raid, raid warnings and Instance chat, including messages from leaders, and whispers: in your own whispers the icons belong to the player you are writing to.
 - **Remembers levels.** Confirmed levels survive `/reload` and logging out. A level that has not been confirmed for 12 hours is forgotten.
 - **Careful with special cases.** Messages protected by the game during chat lockdown (boss fights and so on) stay in the standard look.
-- **Lightweight and safe.** Uses only the standard chat message filter: no Blizzard functions are overridden and nothing is hooked. It works only when a message arrives or the game reports a change, never every frame, and keeps a few hundred kilobytes of data.
+- **Lightweight and safe.** Uses only the standard chat message filter: no Blizzard functions are overridden and nothing is hooked. It works only when a message arrives or the game reports a change, never every frame, and keeps very little data.
 - English and Russian.
 
 ## How to use
 
 Install it and it works: every new message in the supported chats gets the icons and the level.
 
-Settings: **Options → AddOns → ChatPlayerInfo**, or type `/cpi`. You can turn off each part separately:
+Settings: **Options → AddOns → ChatPlayerInfo**, or type `/cpi` (or `/chatplayerinfo`). You can turn off each part separately:
 
 - **Level**, and under it **Yellow level** (available while Level is on);
 - **Class**;
@@ -61,14 +61,14 @@ Source code and bug reports: [GitHub](https://github.com/Ahri-ninetailed/ChatPla
 - **Работает во всех чатах игроков.** «Сказать», «Крик», номерные каналы (Общий, Торговля, Поиск спутников и пользовательские каналы), гильдия, офицерский, группа, рейд, объявления рейда и подземелье, включая сообщения лидеров, и шёпот: в вашем собственном шёпоте показаны иконки того, кому вы пишете.
 - **Помнит уровни.** Подтверждённые уровни сохраняются после `/reload` и выхода из игры. Уровень, который не подтверждали 12 часов, забывается.
 - **Аккуратен с особыми случаями.** Сообщения, которые игра защищает во время блокировки чата (бои с боссами и т.п.), остаются в стандартном виде.
-- **Лёгкий и безопасный.** Использует только стандартный фильтр сообщений чата: не переопределяет функции Blizzard и ничего не перехватывает. Работает только когда приходит сообщение или игра сообщает об изменении, а не каждый кадр, и хранит всего несколько сотен килобайт данных.
+- **Лёгкий и безопасный.** Использует только стандартный фильтр сообщений чата: не переопределяет функции Blizzard и ничего не перехватывает. Работает только когда приходит сообщение или игра сообщает об изменении, а не каждый кадр, и хранит совсем немного данных.
 - Английский и русский языки.
 
 ## Как пользоваться
 
 Установил, и всё работает: у каждого нового сообщения в поддерживаемых чатах появляются иконки и уровень.
 
-Настройки: **Настройки → AddOns → ChatPlayerInfo** или команда `/cpi`. Каждую часть можно отключить отдельно:
+Настройки: **Настройки → AddOns → ChatPlayerInfo** или команда `/cpi` (или `/chatplayerinfo`). Каждую часть можно отключить отдельно:
 
 - **Уровень**, а под ним **Жёлтый уровень** (доступен, пока включён уровень);
 - **Класс**;
