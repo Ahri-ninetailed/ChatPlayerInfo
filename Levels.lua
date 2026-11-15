@@ -129,19 +129,34 @@ end
 -- Гильдия и сообщества. Уровень офлайн-участника тоже верный: офлайн уровень не растёт.
 local clubScanQueued = false
 
+-- Таблица, которую можно читать. Пока действуют ограничения (бой с боссом и т.п.),
+-- Club API отдаёт вместо списка участников секретное значение, и ipairs по нему падает.
+local function Readable(value)
+    return Usable(value) and type(value) == "table"
+end
+
 local function ScanClubs()
     clubScanQueued = false
     local club = C_Club
     if not (club and club.GetSubscribedClubs and club.GetClubMembers and club.GetMemberInfo) then
         return
     end
-    for _, clubInfo in ipairs(club.GetSubscribedClubs() or {}) do
-        local clubId = clubInfo.clubId
-        for _, memberId in ipairs(club.GetClubMembers(clubId) or {}) do
-            local member = club.GetMemberInfo(clubId, memberId)
-            if member and Usable(member.guid) and member.guid and Usable(member.level)
-                and member.level and member.level > 0 then
-                Store(member.guid, member.level)
+    local clubs = club.GetSubscribedClubs()
+    if not Readable(clubs) then
+        return
+    end
+    -- Если список скрыт, просто пропускаем: после снятия ограничений придёт новое
+    -- GUILD_ROSTER_UPDATE (запрос гильдии раз в 2 минуты) или CLUB_MEMBER*_UPDATED.
+    for _, clubInfo in ipairs(clubs) do
+        local clubId = Readable(clubInfo) and clubInfo.clubId
+        local members = Usable(clubId) and clubId and club.GetClubMembers(clubId)
+        if Readable(members) then
+            for _, memberId in ipairs(members) do
+                local member = Usable(memberId) and club.GetMemberInfo(clubId, memberId)
+                if Readable(member) and Usable(member.guid) and member.guid
+                    and Usable(member.level) and type(member.level) == "number" and member.level > 0 then
+                    Store(member.guid, member.level)
+                end
             end
         end
     end
