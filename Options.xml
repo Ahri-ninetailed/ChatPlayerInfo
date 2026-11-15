@@ -1,0 +1,48 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<!--
+		Строка настроек с галочкой, зависимой от галочки выше ("Жёлтый уровень" под "Уровнем").
+		Разложена как строки Blizzard: подпись Text, область подсказки Tooltip над подписью
+		с подсветкой HoverBackground, галочка Checkbox от центра строки минус 80
+		(Blizzard_SettingControls.xml/.lua, SettingsCheckboxControlTemplate).
+
+		НЕ НАСЛЕДУЕТ строк Blizzard, не берёт их миксинов и не объявляет скриптов:
+		почему - см. Options.lua, раздел "Зависимая галочка". Всё поведение задаёт
+		ChatPlayerInfoSettingsChildCheckboxMixin в его Init.
+	-->
+	<Frame name="ChatPlayerInfoSettingsChildCheckboxTemplate" mixin="ChatPlayerInfoSettingsChildCheckboxMixin" virtual="true">
+		<Size x="280" y="26"/>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString parentKey="Text" inherits="GameFontNormalSmall" justifyH="LEFT" wordwrap="false"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame parentKey="Tooltip">
+				<Anchors>
+					<Anchor point="TOPLEFT"/>
+					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOM" x="-80"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture parentKey="HoverBackground" inherits="HoverBackgroundTemplate"/>
+					</Layer>
+				</Layers>
+			</Frame>
+			<CheckButton parentKey="Checkbox" motionScriptsWhileDisabled="true">
+				<Size x="30" y="29"/>
+				<Anchors>
+					<Anchor point="LEFT" relativePoint="CENTER" x="-80" y="0"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture parentKey="HoverBackground" inherits="HoverBackgroundTemplate"/>
+					</Layer>
+				</Layers>
+				<NormalTexture atlas="checkbox-minimal" useAtlasSize="true"/>
+				<PushedTexture atlas="checkbox-minimal" useAtlasSize="true"/>
+				<CheckedTexture atlas="checkmark-minimal" useAtlasSize="true"/>
+				<DisabledCheckedTexture atlas="checkmark-minimal-disabled" useAtlasSize="true"/>
+			</CheckButton>
+		</Frames>
+	</Frame>
+</Ui>

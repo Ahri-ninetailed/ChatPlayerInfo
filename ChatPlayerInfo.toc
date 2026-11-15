@@ -1,0 +1,17 @@
+## Interface: 16001
+## Title: ChatPlayerInfo
+## IconTexture: Interface\Icons\INV_Misc_Note_01
+## Notes: Shows the class icon, race icon and level of players next to their chat messages.
+## Notes-ruRU: Показывает иконки класса и расы и уровень игрока рядом с его сообщением в чате.
+## Category: Chat
+## Author: Ahri-ninetailed
+## Version: @project-version@
+## X-License: MIT
+## SavedVariables: ChatPlayerInfoDB
+
+Core.lua
+Locale.lua
+Levels.lua
+Chat.lua
+Options.lua
+Options.xml
